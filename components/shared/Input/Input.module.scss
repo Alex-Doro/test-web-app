@@ -1,0 +1,29 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 680px;
+}
+
+.label {
+  color: white;
+}
+
+.input {
+  background-color: transparent;
+  border: 1px solid variables.$gray-2;
+  border-radius: variables.$radius-medium;
+  color: white;
+  outline: none;
+  padding: 12px 16px;
+
+  &::placeholder {
+    color: variables.$gray-1;
+  }
+
+  &:focus {
+    border-color: variables.$gray-1;
+  }
+}
