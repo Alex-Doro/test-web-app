@@ -4,6 +4,7 @@ import Input from "@/components/shared/Input/Input";
 import styles from "./StartProject.module.scss";
 import Chips from "@/components/shared/Chips/Chips";
 import Button from "@/components/shared/Button/Button";
+import { useFormContext } from "react-hook-form";
 
 const DUMMY_CHIPS = [
   "NFT",
@@ -32,7 +33,6 @@ const StartProject: React.FC = () => {
         id="projectName"
         label="Project Name (It can be changed later)"
         placeholder="Enter a project name"
-        value=""
       />
       <Input
         type="text"
@@ -40,7 +40,6 @@ const StartProject: React.FC = () => {
         id="projectURL"
         label="Project URL (It cannot be changed after creation)"
         placeholder="Alphaguilty.io/awesomenftpunch"
-        value=""
       />
       <Chips
         label="Project Category (It cannot be changed after creation)"

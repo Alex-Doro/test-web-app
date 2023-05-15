@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { useFormContext } from "react-hook-form";
 
 import styles from "./Input.module.scss";
 
@@ -7,10 +8,10 @@ const Input: React.FC<{
   id: string;
   type: string;
   placeholder: string;
-  value: string | number;
   label?: string;
-  onChange?: () => void;
-}> = ({ name, id, type, placeholder, label, value, onChange }) => {
+}> = ({ name, id, type, placeholder, label }) => {
+  const form = useFormContext();
+
   return (
     <div className={styles.root}>
       {label && (
@@ -19,13 +20,12 @@ const Input: React.FC<{
         </label>
       )}
       <input
+        {...form.register(name)}
         className={cn("text", styles.input)}
         type={type}
         name={name}
         id={id}
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
       />
     </div>
   );
