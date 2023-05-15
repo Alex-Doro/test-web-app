@@ -4,17 +4,21 @@ import { RootState } from "@/store";
 import Steps from "../Steps/Steps";
 
 import styles from "./NewProject.module.scss";
+import StartProject from "./StartProject/StartProject";
+import NewProjectLayout from "@/components/layouts/NewProjectLayout/NewProjectLayout";
 
-const NewProject = () => {
+const NewProject: React.FC = () => {
   const newProjectState = useSelector((state: RootState) => state.newProject);
 
   console.log(newProjectState);
 
   return (
-    <section className={styles.root}>
+    <div className={styles.root}>
       <Steps steps={newProjectState.steps}></Steps>
-      <h1>New Project</h1>
-    </section>
+      <NewProjectLayout>
+        <StartProject />
+      </NewProjectLayout>
+    </div>
   );
 };
 

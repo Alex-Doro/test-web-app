@@ -1,0 +1,10 @@
+@use "../../../../styles/variables.scss";
+
+.subTitle {
+  color: variables.$blue;
+  margin-bottom: 8px;
+}
+
+.title {
+  color: white;
+}
