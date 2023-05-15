@@ -15,5 +15,8 @@
     margin: 0;
     padding: 42px 26px;
     border: 1px solid variables.$gray-2;
+    background-image: url("../../../public/img/steps-bg.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
   }
 }
