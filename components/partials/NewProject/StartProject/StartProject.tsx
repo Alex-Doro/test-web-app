@@ -2,6 +2,19 @@ import cn from "classnames";
 
 import Input from "@/components/shared/Input/Input";
 import styles from "./StartProject.module.scss";
+import Chips from "@/components/shared/Chips/Chips";
+
+const DUMMY_CHIPS = [
+  "NFT",
+  "GameFi",
+  "DeFi",
+  "DAO",
+  "SocialFi",
+  "Metaverse",
+  "Tools",
+  "Ecosystem",
+  "Others",
+];
 
 const StartProject: React.FC = () => {
   return (
@@ -25,6 +38,10 @@ const StartProject: React.FC = () => {
         label="Project URL (It cannot be changed after creation)"
         placeholder="Alphaguilty.io/awesomenftpunch"
         value=""
+      />
+      <Chips
+        label="Project Category (It cannot be changed after creation)"
+        chips={DUMMY_CHIPS}
       />
     </div>
   );

@@ -27,7 +27,6 @@ const Input: React.FC<{
         value={value}
         onChange={onChange}
       />
-      ;
     </div>
   );
 };

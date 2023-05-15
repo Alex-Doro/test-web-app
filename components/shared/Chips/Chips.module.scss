@@ -1,0 +1,17 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  color: white;
+}
+
+.chipsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

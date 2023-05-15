@@ -1,0 +1,33 @@
+@use "../../../../styles/variables.scss";
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: variables.$radius-large;
+  background-color: variables.$gray-2;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &.checked {
+    background-color: variables.$gray-3;
+    color: variables.$blue;
+  }
+}
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.label {
+  color: white;
+}
