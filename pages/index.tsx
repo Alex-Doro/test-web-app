@@ -1,3 +1,5 @@
+import NewProject from "@/components/partials/NewProject/NewProject";
+import Steps from "@/components/partials/Steps/Steps";
 import Head from "next/head";
 
 const HomePage = () => {
@@ -6,7 +8,7 @@ const HomePage = () => {
       <Head>
         <title>Test-web-app</title>
       </Head>
-      <p>Home page</p>
+      <NewProject></NewProject>
     </>
   );
 };
