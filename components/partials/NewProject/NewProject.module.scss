@@ -1,0 +1,11 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    flex-direction: row;
+  }
+}
