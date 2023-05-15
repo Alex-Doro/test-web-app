@@ -1,0 +1,81 @@
+@use "../../../../styles/variables.scss";
+
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    gap: 8px;
+
+    &:not(:last-child) {
+      padding-bottom: 24px;
+    }
+  }
+
+  &:before {
+    content: "";
+    flex-shrink: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  &:not(:last-child):after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    margin-inline: 4px;
+
+    @media screen and (min-width: variables.$screen-sm) {
+      position: absolute;
+      left: 4px;
+      bottom: 0;
+      width: 1px;
+      height: 25px;
+      margin: 0;
+    }
+  }
+
+  &.incomplete {
+    color: variables.$gray-1;
+
+    &:before,
+    &:after {
+      background-color: variables.$gray-1;
+    }
+  }
+
+  &.current {
+    color: white;
+
+    &:before,
+    &:after {
+      background-color: white;
+    }
+  }
+
+  &.completed {
+    color: variables.$blue;
+
+    &:before,
+    &:after {
+      background-color: variables.$blue;
+    }
+  }
+
+  .stepName {
+    display: none;
+
+    @media screen and (min-width: variables.$screen-sm) {
+      display: block;
+    }
+  }
+}

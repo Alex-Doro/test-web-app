@@ -1,0 +1,16 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 72px 0 20px;
+  margin-inline: auto;
+  background-color: variables.$black;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 42px 26px;
+  }
+}

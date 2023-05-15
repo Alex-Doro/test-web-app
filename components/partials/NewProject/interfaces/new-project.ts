@@ -1,4 +1,4 @@
-interface NewProject {
+export interface NewProject {
   name: string;
   url: string;
   category: string;

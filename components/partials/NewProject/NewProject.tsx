@@ -1,15 +1,16 @@
+import { useSelector } from "react-redux";
+
+import { RootState } from "@/store";
 import Steps from "../Steps/Steps";
 
-const DUMMY_STEPS = [
-  "Start First Project",
-  "Project Details",
-  "Create Project",
-];
-
 const NewProject = () => {
+  const newProjectState = useSelector((state: RootState) => state.newProject);
+
+  console.log(newProjectState);
+
   return (
     <>
-      <Steps steps={DUMMY_STEPS}></Steps>
+      <Steps steps={newProjectState.steps}></Steps>
       <h1>New Project</h1>
     </>
   );
