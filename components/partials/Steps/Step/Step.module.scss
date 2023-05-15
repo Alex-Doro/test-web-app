@@ -63,11 +63,11 @@
   }
 
   &.completed {
-    color: variables.$blue;
+    color: variables.$blue-1;
 
     &:before,
     &:after {
-      background-color: variables.$blue;
+      background-color: variables.$blue-1;
     }
   }
 

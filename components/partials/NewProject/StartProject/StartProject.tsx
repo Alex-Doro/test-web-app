@@ -3,6 +3,7 @@ import cn from "classnames";
 import Input from "@/components/shared/Input/Input";
 import styles from "./StartProject.module.scss";
 import Chips from "@/components/shared/Chips/Chips";
+import Button from "@/components/shared/Button/Button";
 
 const DUMMY_CHIPS = [
   "NFT",
@@ -19,10 +20,12 @@ const DUMMY_CHIPS = [
 const StartProject: React.FC = () => {
   return (
     <div className={styles.root}>
-      <p className={cn("sub-title", styles.subTitle)}>
-        To Create Quest you need firstly create Project
-      </p>
-      <h2 className={styles.title}>Add New Project</h2>;
+      <div className={styles.titleContainer}>
+        <p className={cn("sub-title", styles.subTitle)}>
+          To Create Quest you need firstly create Project
+        </p>
+        <h2 className={styles.title}>Add New Project</h2>;
+      </div>
       <Input
         type="text"
         name="projectName"
@@ -43,6 +46,7 @@ const StartProject: React.FC = () => {
         label="Project Category (It cannot be changed after creation)"
         chips={DUMMY_CHIPS}
       />
+      <Button>Add Project</Button>
     </div>
   );
 };

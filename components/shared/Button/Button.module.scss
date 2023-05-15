@@ -1,0 +1,47 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  border: none;
+  border-radius: variables.$radius-medium;
+  padding: 13px 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: variables.$blue-1;
+  color: variables.$black;
+  width: 100%;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    max-width: 328px;
+  }
+
+  &:hover {
+    background-color: variables.$blue-2;
+  }
+
+  &:active {
+    background-color: variables.$blue-3;
+  }
+}
+
+.secondary {
+  background-color: variables.$gray-2;
+  color: #fafafa;
+  width: 100%;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    max-width: 120px;
+  }
+
+  &:hover {
+    background-color: variables.$gray-4;
+  }
+
+  &:active {
+    background-color: variables.$gray-5;
+  }
+}
