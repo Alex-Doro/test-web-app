@@ -6,8 +6,9 @@ import styles from "./Chips.module.scss";
 const Chips: React.FC<{
   chips: string[];
   label?: string;
+  name: string;
   onChange?: () => void;
-}> = ({ chips, label, onChange }) => {
+}> = ({ chips, label, name, onChange }) => {
   return (
     <div className={styles.root}>
       {label && (
@@ -16,8 +17,12 @@ const Chips: React.FC<{
         </label>
       )}
       <div className={styles.chipsContainer}>
-        {chips.map(chip => {
-          return <Chip key={chip}>{chip}</Chip>;
+        {chips.map((chip) => {
+          return (
+            <Chip key={chip} name={name}>
+              {chip}
+            </Chip>
+          );
         })}
       </div>
     </div>

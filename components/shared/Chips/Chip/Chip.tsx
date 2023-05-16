@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { useFormContext } from "react-hook-form";
 
 import styles from "./Chip.module.scss";
 
@@ -6,8 +7,11 @@ const Chip: React.FC<{
   id?: string;
   checked?: boolean;
   onChange?: () => void;
-  children: React.ReactNode;
-}> = ({ checked, onChange, children }) => {
+  children: string;
+  name: string;
+}> = ({ checked, onChange, children, name }) => {
+  const form = useFormContext();
+
   return (
     <div className={styles.checkboxContainer}>
       <div
@@ -16,9 +20,9 @@ const Chip: React.FC<{
         {children}
       </div>
       <input
+        {...form.register(children)}
         type="checkbox"
         className={styles.checkboxInput}
-        checked={checked}
       />
     </div>
   );
