@@ -23,15 +23,16 @@ const DUMMY_STEPS = [
 ];
 
 const NewProject: React.FC = () => {
-  const NewProjectForm = useForm();
+  const newProjectForm = useForm();
+  console.log(newProjectForm.watch());
 
   return (
     <div className={styles.root}>
       <Steps steps={DUMMY_STEPS}></Steps>
       <NewProjectLayout>
-        <FormProvider {...NewProjectForm}>
+        <FormProvider {...newProjectForm}>
           <form
-            onSubmit={NewProjectForm.handleSubmit((data) => console.log(data))}
+            onSubmit={newProjectForm.handleSubmit(data => console.log(data))}
           >
             <StartProject />
           </form>

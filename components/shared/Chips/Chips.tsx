@@ -17,7 +17,7 @@ const Chips: React.FC<{
         </label>
       )}
       <div className={styles.chipsContainer}>
-        {chips.map((chip) => {
+        {chips.map(chip => {
           return (
             <Chip key={chip} name={name}>
               {chip}
