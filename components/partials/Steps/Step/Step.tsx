@@ -14,9 +14,9 @@ const Step: React.FC<{
   });
 
   return (
-    <button className={stepClassName}>
+    <div className={stepClassName}>
       <span className={styles.stepName}>{children}</span>
-    </button>
+    </div>
   );
 };
 
