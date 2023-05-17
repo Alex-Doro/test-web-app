@@ -28,7 +28,17 @@ const DUMMY_STEPS = [
 const NewProject: React.FC = () => {
   const [steps, setSteps] = useState(DUMMY_STEPS);
 
-  const newProjectForm = useForm();
+  const newProjectForm = useForm({
+    defaultValues: {
+      projectName: "",
+      url: "",
+      category: [],
+      goal: "",
+      workersCount: 0,
+      productStatus: "",
+      email: "",
+    },
+  });
   console.log(newProjectForm.watch());
 
   const handleStepChange = (goToStep: number) => {
