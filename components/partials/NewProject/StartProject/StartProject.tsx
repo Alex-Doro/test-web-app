@@ -47,7 +47,7 @@ const StartProject: React.FC<{
         label="Project Category (It cannot be changed after creation)"
         chips={DUMMY_CHIPS}
       />
-      <Button onClick={() => handleStepChange(0)}>Add Project</Button>
+      <Button onClick={() => handleStepChange(1)}>Add Project</Button>
     </div>
   );
 };

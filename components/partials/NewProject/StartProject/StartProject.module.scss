@@ -23,3 +23,12 @@
 .title {
   color: white;
 }
+
+.buttonWrapper {
+  display: flex;
+  gap: 16px;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    gap: 32px;
+  }
+}

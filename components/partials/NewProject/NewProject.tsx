@@ -8,6 +8,7 @@ import NewProjectLayout from "@/components/layouts/NewProjectLayout/NewProjectLa
 import { NewProjectStepStatus } from "./enums/new-project-step";
 import ProjectDetails from "./ProjectDetails/ProjectDetails";
 import { useState } from "react";
+import CreateProject from "./CreateProject/CreateProject";
 
 const DUMMY_STEPS = [
   {
@@ -30,15 +31,19 @@ const NewProject: React.FC = () => {
   const newProjectForm = useForm();
   console.log(newProjectForm.watch());
 
-  const handleStepChange = (stepNumber: number) => {
+  const handleStepChange = (goToStep: number) => {
     setSteps(prevState => {
       const newState = prevState.map((step, index) => {
-        if (index === stepNumber) {
-          return { ...step, status: NewProjectStepStatus.Completed };
+        if (index === goToStep) {
+          return { ...step, status: NewProjectStepStatus.Current };
         }
 
-        if (index === stepNumber + 1) {
-          return { ...step, status: NewProjectStepStatus.Current };
+        if (index === goToStep + 1) {
+          return { ...step, status: NewProjectStepStatus.Incomplete };
+        }
+
+        if (index === goToStep - 1) {
+          return { ...step, status: NewProjectStepStatus.Completed };
         }
 
         return step;
@@ -60,7 +65,10 @@ const NewProject: React.FC = () => {
               <StartProject handleStepChange={handleStepChange} />
             )}
             {steps[1].status === NewProjectStepStatus.Current && (
-              <ProjectDetails />
+              <ProjectDetails handleStepChange={handleStepChange} />
+            )}
+            {steps[2].status === NewProjectStepStatus.Current && (
+              <CreateProject handleStepChange={handleStepChange} />
             )}
           </form>
         </FormProvider>
