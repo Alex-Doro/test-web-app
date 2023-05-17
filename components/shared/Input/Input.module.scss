@@ -4,7 +4,12 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  max-width: 680px;
+  max-width: 100%;
+  flex-grow: 1;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    flex-grow: 0;
+  }
 }
 
 .label {

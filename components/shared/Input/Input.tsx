@@ -7,9 +7,10 @@ const Input: React.FC<{
   name: string;
   id: string;
   type: string;
-  placeholder: string;
+  placeholder?: string;
   label?: string;
-}> = ({ name, id, type, placeholder, label }) => {
+  className?: string;
+}> = ({ name, id, type, placeholder, label, className }) => {
   const form = useFormContext();
 
   return (
@@ -21,7 +22,7 @@ const Input: React.FC<{
       )}
       <input
         {...form.register(name)}
-        className={cn("text", styles.input)}
+        className={cn("text", styles.input, className)}
         type={type}
         name={name}
         id={id}

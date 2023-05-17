@@ -1,0 +1,13 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.counter {
+  @media screen and (min-width: variables.$screen-sm) {
+    max-width: 150px;
+  }
+}
