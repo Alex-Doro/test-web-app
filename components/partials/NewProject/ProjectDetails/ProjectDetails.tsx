@@ -30,7 +30,7 @@ const ProjectDetails: React.FC<{
         <Button variant="secondary" onClick={() => handleStepChange(0)}>
           Back
         </Button>
-        <Button onClick={() => handleStepChange(2)}>Add Project</Button>
+        <Button onClick={() => handleStepChange(2)}>Continue</Button>
       </div>
     </div>
   );

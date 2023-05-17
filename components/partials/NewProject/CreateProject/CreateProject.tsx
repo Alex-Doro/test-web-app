@@ -21,7 +21,7 @@ const CreateProject: React.FC<{
         <Button variant="secondary" onClick={() => handleStepChange(1)}>
           Back
         </Button>
-        <Button type="submit">Add Project</Button>
+        <Button type="submit">Create Project</Button>
       </div>
     </div>
   );
