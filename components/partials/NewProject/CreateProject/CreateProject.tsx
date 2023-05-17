@@ -1,6 +1,6 @@
 import cn from "classnames";
 
-import styles from "../StartProject/StartProject.module.scss";
+import styles from "../NewProject.module.scss";
 
 import Button from "@/components/shared/Button/Button";
 
@@ -8,7 +8,7 @@ const CreateProject: React.FC<{
   handleStepChange: (stepNumber: number) => void;
 }> = ({ handleStepChange }) => {
   return (
-    <div className={styles.root}>
+    <div className={styles.step}>
       <div className={styles.titleContainer}>
         <p className={cn("sub-title", styles.subTitle)}>Create Project</p>
         <h2 className={styles.title}>

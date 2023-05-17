@@ -1,7 +1,8 @@
 import cn from "classnames";
 
+import styles from "../NewProject.module.scss";
+
 import Input from "@/components/shared/Input/Input";
-import styles from "./StartProject.module.scss";
 import Chips from "@/components/shared/Chips/Chips";
 import Button from "@/components/shared/Button/Button";
 
@@ -21,7 +22,7 @@ const StartProject: React.FC<{
   handleStepChange: (stepNumber: number) => void;
 }> = ({ handleStepChange }) => {
   return (
-    <div className={styles.root}>
+    <div className={styles.step}>
       <div className={styles.titleContainer}>
         <p className={cn("sub-title", styles.subTitle)}>
           To Create Quest you need firstly create Project

@@ -9,3 +9,36 @@
     flex-direction: row;
   }
 }
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    gap: 28px;
+  }
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subTitle {
+  color: variables.$blue-1;
+}
+
+.title {
+  color: white;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 16px;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    gap: 32px;
+  }
+}
