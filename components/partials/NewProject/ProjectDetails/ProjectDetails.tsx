@@ -22,9 +22,13 @@ const ProjectDetails: React.FC<{
           What is your main goal with AlphaQuest?
         </h2>
       </div>
-      {DUMMY_RADIO.map(item => {
-        return <RadioButton key={item} value={item} name="goal" />;
-      })}
+      <div className={styles.formSection}>
+        <div className={styles.controls}>
+          {DUMMY_RADIO.map(item => {
+            return <RadioButton key={item} value={item} name="goal" />;
+          })}
+        </div>
+      </div>
       <RadioButton value="Other" name="goal" />
       <div className={styles.buttonWrapper}>
         <Button variant="secondary" onClick={() => handleStepChange(0)}>

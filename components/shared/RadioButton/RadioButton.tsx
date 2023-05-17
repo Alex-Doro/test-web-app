@@ -1,5 +1,4 @@
 import cn from "classnames";
-import { ChangeEvent, useState } from "react";
 import { useFormContext } from "react-hook-form";
 
 import styles from "./RadioButton.module.scss";
