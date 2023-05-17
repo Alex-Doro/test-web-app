@@ -17,7 +17,9 @@ const DUMMY_CHIPS = [
   "Others",
 ];
 
-const StartProject: React.FC = () => {
+const StartProject: React.FC<{
+  handleStepChange: (stepNumber: number) => void;
+}> = ({ handleStepChange }) => {
   return (
     <div className={styles.root}>
       <div className={styles.titleContainer}>
@@ -45,7 +47,7 @@ const StartProject: React.FC = () => {
         label="Project Category (It cannot be changed after creation)"
         chips={DUMMY_CHIPS}
       />
-      <Button>Add Project</Button>
+      <Button onClick={() => handleStepChange(0)}>Add Project</Button>
     </div>
   );
 };
