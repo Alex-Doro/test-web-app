@@ -1,9 +1,9 @@
 export interface NewProject {
-  name: string;
+  projectName: string;
   url: string;
-  category: string;
+  category: string[];
   goal: string;
   workersCount: number;
-  status: string;
-  contactEmail: string;
+  projectStatus: string;
+  email: string;
 }

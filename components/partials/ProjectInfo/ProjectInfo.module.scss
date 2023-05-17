@@ -1,0 +1,42 @@
+@use "../../../styles/variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: variables.$black;
+  flex-grow: 1;
+  padding: 32px 16px;
+  background-image: url("../../../public/img/steps-bg.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    padding: 100px 60px;
+  }
+}
+
+.title,
+.text {
+  color: white;
+}
+
+.title {
+  margin-bottom: 28px;
+}
+
+.subTitle {
+  color: variables.$blue-1;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailsItem {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}

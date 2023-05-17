@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import styles from "./NewProject.module.scss";
 
+import utils from "@/utils/utils";
+import NewProjectLayout from "@/components/layouts/NewProjectLayout/NewProjectLayout";
 import Steps from "../Steps/Steps";
 import StartProject from "./StartProject/StartProject";
-import NewProjectLayout from "@/components/layouts/NewProjectLayout/NewProjectLayout";
 import { NewProjectStepStatus } from "./enums/new-project-step";
 import ProjectDetails from "./ProjectDetails/ProjectDetails";
-import { useState } from "react";
 import CreateProject from "./CreateProject/CreateProject";
+import { NewProject } from "./interfaces/new-project";
+import { useRouter } from "next/router";
 
 const DUMMY_STEPS = [
   {
@@ -27,6 +30,7 @@ const DUMMY_STEPS = [
 
 const NewProject: React.FC = () => {
   const [steps, setSteps] = useState(DUMMY_STEPS);
+  const router = useRouter();
 
   const newProjectForm = useForm({
     defaultValues: {
@@ -35,11 +39,10 @@ const NewProject: React.FC = () => {
       category: [],
       goal: "",
       workersCount: 0,
-      productStatus: "",
+      projectStatus: "",
       email: "",
     },
   });
-  console.log(newProjectForm.watch());
 
   const handleStepChange = (goToStep: number) => {
     setSteps(prevState => {
@@ -63,14 +66,20 @@ const NewProject: React.FC = () => {
     });
   };
 
+  const handleSubmit = (data: NewProject) => {
+    if (utils.isClient()) {
+      localStorage.setItem("project", JSON.stringify(data));
+
+      router.push("/project");
+    }
+  };
+
   return (
     <div className={styles.root}>
       <Steps steps={steps}></Steps>
       <NewProjectLayout>
         <FormProvider {...newProjectForm}>
-          <form
-            onSubmit={newProjectForm.handleSubmit(data => console.log(data))}
-          >
+          <form onSubmit={newProjectForm.handleSubmit(handleSubmit)}>
             {steps[0].status === NewProjectStepStatus.Current && (
               <StartProject handleStepChange={handleStepChange} />
             )}

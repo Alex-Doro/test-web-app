@@ -25,7 +25,7 @@ const CreateProject: React.FC<{
         <h2 className={styles.title}>Are you pre or post product launch?</h2>
         <div className={styles.controls}>
           {DUMMY_RADIO.map(item => {
-            return <RadioButton key={item} name="productStatus" value={item} />;
+            return <RadioButton key={item} name="projectStatus" value={item} />;
           })}
         </div>
       </div>
