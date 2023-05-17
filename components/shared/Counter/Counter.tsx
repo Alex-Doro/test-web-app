@@ -12,11 +12,11 @@ const Counter: React.FC<{
 
   return (
     <div className={styles.root}>
-      <Button variant="secondary" style={{ maxWidth: "48px" }}>
+      <Button variant="secondary" className={styles.counterBtn}>
         -
       </Button>
       <Input name={name} id={name} type="number" className={styles.counter} />
-      <Button variant="secondary" style={{ maxWidth: "48px" }}>
+      <Button variant="secondary" className={styles.counterBtn}>
         +
       </Button>
     </div>

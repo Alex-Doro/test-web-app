@@ -11,3 +11,9 @@
     max-width: 150px;
   }
 }
+
+.counterBtn {
+  @media screen and (min-width: variables.$screen-xs) {
+    max-width: 48px;
+  }
+}

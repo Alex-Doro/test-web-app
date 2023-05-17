@@ -5,19 +5,24 @@ import styles from "./Button.module.scss";
 const Button: React.FC<{
   variant?: "primary" | "secondary";
   type?: "button" | "submit" | "reset" | undefined;
-  style?: any;
   onClick?: () => void;
+  className?: string;
   children: React.ReactNode;
-}> = ({ variant = "primary", type = "button", onClick, style, children }) => {
+}> = ({
+  variant = "primary",
+  type = "button",
+  onClick,
+  className,
+  children,
+}) => {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={cn("text", styles.root, {
+      className={cn("text", styles.root, className, {
         [styles.primary]: variant === "primary",
         [styles.secondary]: variant === "secondary",
       })}
-      style={style}
     >
       {children}
     </button>
