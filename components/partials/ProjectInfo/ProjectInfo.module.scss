@@ -6,9 +6,9 @@
   min-height: 100vh;
   background-color: variables.$black;
   flex-grow: 1;
-  padding: 32px 16px;
+  padding: 32px 16px 80px;
   background-image: url("../../../public/img/steps-bg.png");
-  background-position: bottom;
+  background-position: bottom left;
   background-repeat: no-repeat;
 
   @media screen and (min-width: variables.$screen-sm) {
@@ -27,12 +27,24 @@
 
 .subTitle {
   color: variables.$blue-1;
+  margin-top: 8px;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    margin-top: 0;
+  }
 }
 
 .detailsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: variables.$screen-sm) {
+    grid-template-columns: 150px 1fr;
+    gap: 16px;
+  }
 }
 
 .detailsItem {
