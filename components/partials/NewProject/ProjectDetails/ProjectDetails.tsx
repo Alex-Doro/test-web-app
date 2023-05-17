@@ -3,6 +3,13 @@ import cn from "classnames";
 import styles from "../NewProject.module.scss";
 
 import Button from "@/components/shared/Button/Button";
+import RadioButton from "@/components/shared/RadioButton/RadioButton";
+
+const DUMMY_RADIO = [
+  "Grow My Community",
+  "Activate Existing Members",
+  "Understand My Members",
+];
 
 const ProjectDetails: React.FC<{
   handleStepChange: (stepNumber: number) => void;
@@ -15,6 +22,10 @@ const ProjectDetails: React.FC<{
           What is your main goal with AlphaQuest?
         </h2>
       </div>
+      {DUMMY_RADIO.map(item => {
+        return <RadioButton key={item} value={item} name="goal" />;
+      })}
+      <RadioButton value="Other" name="goal" />
       <div className={styles.buttonWrapper}>
         <Button variant="secondary" onClick={() => handleStepChange(0)}>
           Back
